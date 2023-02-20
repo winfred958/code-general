@@ -2,7 +2,7 @@ package com.winfred.code.general.base;
 
 
 /**
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 public class BasePageResponse<T extends PageData<?>> extends BaseResponse<T> {
 

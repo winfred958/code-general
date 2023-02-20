@@ -4,7 +4,7 @@ package com.winfred.code.general.base;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 public class BaseResponse<T> {
     private Integer code;

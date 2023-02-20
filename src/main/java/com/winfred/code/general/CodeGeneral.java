@@ -5,10 +5,11 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.querys.MySqlQuery;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.winfred.code.general.base.BasePageRequest;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 @Slf4j
 public class CodeGeneral {
@@ -71,20 +72,21 @@ public class CodeGeneral {
             .addExclude("flyway_schema_history")
             .enableSchema()
             .build();
-
-        strategyConfig
-            .entityBuilder()
-            .enableChainModel()
-            .formatFileName("%sEntity")
-            .build();
-
+        
         strategyConfig
             .entityBuilder()
             .enableLombok()
+            .formatFileName("%sEntity")
             .enableTableFieldAnnotation()
             .enableChainModel()
-            .enableColumnConstant()
-            .get();
+            .superClass(BasePageRequest.class)
+            .enableColumnConstant();
+
+        strategyConfig
+            .mapperBuilder()
+            .enableBaseResultMap()
+            .enableMapperAnnotation()
+            .enableBaseColumnList();
 
         generator.strategy(strategyConfig);
 

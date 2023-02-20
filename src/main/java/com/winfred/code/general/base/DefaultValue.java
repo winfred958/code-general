@@ -1,7 +1,7 @@
 package com.winfred.code.general.base;
 
 /**
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 public interface DefaultValue {
     Integer DEFAULT_PAGE_NUMBER = 1;

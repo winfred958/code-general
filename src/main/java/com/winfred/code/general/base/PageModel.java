@@ -7,7 +7,7 @@ import lombok.Setter;
 /**
  * 分页模型
  *
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 public class PageModel implements CleanerBean {
 

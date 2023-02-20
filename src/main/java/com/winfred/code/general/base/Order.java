@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 public class Order {
 

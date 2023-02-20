@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 public class BasePageRequest extends PageModel implements Serializable {
 

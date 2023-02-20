@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * @author kai.hu@shuyun.com
+ * @author winfred
  */
 @NoArgsConstructor
 public class MetadataException extends RuntimeException {
