@@ -5,5 +5,5 @@ package com.winfred.code.general.base;
  */
 public interface CleanerBean {
 
-    void clean();
+  void clean();
 }

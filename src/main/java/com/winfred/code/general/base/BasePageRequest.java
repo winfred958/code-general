@@ -12,19 +12,19 @@ import java.util.List;
  */
 public class BasePageRequest extends PageModel implements Serializable {
 
-    private static final long serialVersionUID = -5700842088869071012L;
+  private static final long serialVersionUID = -5700842088869071012L;
 
-    @Getter
-    @Setter
-    private List<Order> orders;
+  @Getter
+  @Setter
+  private List<Order> orders;
 
-    @Getter
-    @Setter
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String startDateStr;
+  @Getter
+  @Setter
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  private String startDateStr;
 
-    @Getter
-    @Setter
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String endDateStr;
+  @Getter
+  @Setter
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  private String endDateStr;
 }

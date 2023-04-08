@@ -14,101 +14,101 @@ import java.util.List;
 @Builder
 public class PageData<T> {
 
-    /**
-     * 当前页 [1, Integer.MAX)
-     */
-    private Integer page;
-    /**
-     * 当前页面显示数
-     */
-    private Integer size;
-    /**
-     * 总页数
-     */
-    private Integer totalPage;
-    /**
-     * 数据总数
-     */
-    private Long total;
-    private List<T> list;
+  /**
+   * 当前页 [1, Integer.MAX)
+   */
+  private Integer page;
+  /**
+   * 当前页面显示数
+   */
+  private Integer size;
+  /**
+   * 总页数
+   */
+  private Integer totalPage;
+  /**
+   * 数据总数
+   */
+  private Long total;
+  private List<T> list;
 
-    private Long offset;
+  private Long offset;
 
-    public PageData() {
+  public PageData() {
+  }
+
+  public PageData(Integer page, Integer size, Long total, List<T> list) {
+    this.page = page;
+    this.size = size;
+    this.total = total;
+    this.list = list;
+  }
+
+  public Integer getPage() {
+    if (null == this.page) {
+      this.page = DefaultValue.DEFAULT_PAGE_NUMBER;
     }
+    return page;
+  }
 
-    public PageData(Integer page, Integer size, Long total, List<T> list) {
-        this.page = page;
-        this.size = size;
-        this.total = total;
-        this.list = list;
-    }
+  public void setPage(Integer page) {
+    this.page = page;
+  }
 
-    public Integer getPage() {
-        if (null == this.page) {
-            this.page = DefaultValue.DEFAULT_PAGE_NUMBER;
-        }
-        return page;
+  public Integer getSize() {
+    if (this.size == null) {
+      this.size = DefaultValue.DEFAULT_PAGE_SIZE;
     }
+    return size;
+  }
 
-    public void setPage(Integer page) {
-        this.page = page;
-    }
+  public void setSize(Integer size) {
+    this.size = size;
+  }
 
-    public Integer getSize() {
-        if (this.size == null) {
-            this.size = DefaultValue.DEFAULT_PAGE_SIZE;
-        }
-        return size;
+  public Integer getTotalPage() {
+    if (this.total % this.size == 0) {
+      this.totalPage = Math.toIntExact(this.total / this.size);
+    } else {
+      this.totalPage = Math.toIntExact(this.total / this.size + 1);
     }
+    return totalPage;
+  }
 
-    public void setSize(Integer size) {
-        this.size = size;
-    }
+  public void setTotalPage(Integer totalPage) {
+    this.totalPage = totalPage;
+  }
 
-    public Integer getTotalPage() {
-        if (this.total % this.size == 0) {
-            this.totalPage = Math.toIntExact(this.total / this.size);
-        } else {
-            this.totalPage = Math.toIntExact(this.total / this.size + 1);
-        }
-        return totalPage;
+  public Long getTotal() {
+    if (this.total == null) {
+      total = DefaultValue.DEFAULT_TOTAL;
     }
+    return total;
+  }
 
-    public void setTotalPage(Integer totalPage) {
-        this.totalPage = totalPage;
-    }
+  public void setTotal(Long total_size) {
+    this.total = total_size;
+  }
 
-    public Long getTotal() {
-        if (this.total == null) {
-            total = DefaultValue.DEFAULT_TOTAL;
-        }
-        return total;
+  public List<T> getList() {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
+    return list;
+  }
 
-    public void setTotal(Long total_size) {
-        this.total = total_size;
-    }
+  public void setList(List<T> list) {
+    this.list = list;
+  }
 
-    public List<T> getList() {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
-        }
-        return list;
+  public Long getOffset() {
+    if (offset == null) {
+      offset = (long) (getPage() - 1) * getSize();
     }
+    return offset;
+  }
 
-    public void setList(List<T> list) {
-        this.list = list;
-    }
-
-    public Long getOffset() {
-        if (offset == null) {
-            offset = (long) (getPage() - 1) * getSize();
-        }
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
+  public void setOffset(Long offset) {
+    this.offset = offset;
+  }
 }
