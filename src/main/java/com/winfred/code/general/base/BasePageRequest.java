@@ -1,5 +1,6 @@
 package com.winfred.code.general.base;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,15 +17,18 @@ public class BasePageRequest extends PageModel implements Serializable {
 
   @Getter
   @Setter
+  @TableField(exist = false)
   private List<Order> orders;
 
   @Getter
   @Setter
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  @TableField(exist = false)
   private String startDateStr;
 
   @Getter
   @Setter
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  @TableField(exist = false)
   private String endDateStr;
 }
