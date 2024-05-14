@@ -1,4 +1,4 @@
-package com.winfred.code.general.base;
+package com.winfred.common.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -11,22 +11,20 @@ import java.util.List;
 /**
  * @author winfred
  */
+@Getter
 public class BasePageRequest extends PageModel implements Serializable {
 
   private static final long serialVersionUID = -5700842088869071012L;
 
-  @Getter
   @Setter
   @TableField(exist = false)
   private List<Order> orders;
 
-  @Getter
   @Setter
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   @TableField(exist = false)
   private String startDateStr;
 
-  @Getter
   @Setter
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   @TableField(exist = false)

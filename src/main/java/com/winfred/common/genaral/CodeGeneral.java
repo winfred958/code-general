@@ -1,11 +1,11 @@
-package com.winfred.code.general;
+package com.winfred.common.genaral;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.querys.MySqlQuery;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import com.winfred.code.general.base.BasePageRequest;
+import com.winfred.common.entity.BasePageRequest;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -17,7 +17,7 @@ public class CodeGeneral {
   public interface Constant {
 
     // database name
-    String DB_SCHEMA_NAME = "customer_admin";
+    String DB_SCHEMA_NAME = "oauth2_authorization_server";
 
     String DB_JDBC_URL = "jdbc:mysql://10.101.110.111:13306" +
         "/" + DB_SCHEMA_NAME + "?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
@@ -28,8 +28,8 @@ public class CodeGeneral {
     /**
      * package 信息
      */
-    String PACKAGE_PATH = "com.ec.customer";
-    String SUB_PACKAGE_PATH = "admin";
+    String PACKAGE_PATH = "com.winfred.mall";
+    String SUB_PACKAGE_PATH = "auth";
 
     /**
      * fixed
